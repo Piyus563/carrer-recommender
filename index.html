@@ -7,6 +7,7 @@
     <title>CareerPath Pro | Find Your Dream Career</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -587,6 +588,9 @@
                     </div>
                     
                     <div class="button-group">
+                        <button class="btn btn-primary" id="download-pdf-btn">
+                            <i class="fas fa-download"></i> Download PDF Report
+                        </button>
                         <button class="btn btn-secondary" id="back-btn">
                             <i class="fas fa-arrow-left"></i> Back to Input
                         </button>
@@ -613,6 +617,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor", "master", "phd"],
                 salary: "$70,000 - $120,000",
+                salaryINR: "₹58,00,000 - ₹99,60,000",
                 growth: "22% (Much faster than average)",
                 demand: "High"
             },
@@ -624,6 +629,7 @@
                 skillLevel: ["advanced", "expert"],
                 education: ["master", "phd"],
                 salary: "$85,000 - $150,000",
+                salaryINR: "₹70,55,000 - ₹1,24,50,000",
                 growth: "31% (Much faster than average)",
                 demand: "Very High"
             },
@@ -635,6 +641,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced", "expert"],
                 education: ["associate", "bachelor"],
                 salary: "$45,000 - $85,000",
+                salaryINR: "₹37,35,000 - ₹70,55,000",
                 growth: "3% (As fast as average)",
                 demand: "Moderate"
             },
@@ -646,6 +653,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced"],
                 education: ["bachelor"],
                 salary: "$50,000 - $90,000",
+                salaryINR: "₹41,50,000 - ₹74,70,000",
                 growth: "10% (Faster than average)",
                 demand: "High"
             },
@@ -657,6 +665,7 @@
                 skillLevel: ["intermediate", "advanced"],
                 education: ["bachelor", "master"],
                 salary: "$60,000 - $110,000",
+                salaryINR: "₹49,80,000 - ₹91,30,000",
                 growth: "32% (Much faster than average)",
                 demand: "High"
             },
@@ -668,6 +677,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor", "master"],
                 salary: "$60,000 - $120,000",
+                salaryINR: "₹49,80,000 - ₹99,60,000",
                 growth: "6% (As fast as average)",
                 demand: "Moderate"
             },
@@ -679,6 +689,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor"],
                 salary: "$65,000 - $110,000",
+                salaryINR: "₹53,95,000 - ₹91,30,000",
                 growth: "13% (Faster than average)",
                 demand: "High"
             },
@@ -690,6 +701,7 @@
                 skillLevel: ["intermediate", "advanced"],
                 education: ["bachelor", "master"],
                 salary: "$50,000 - $100,000",
+                salaryINR: "₹41,50,000 - ₹83,00,000",
                 growth: "8% (As fast as average)",
                 demand: "Moderate"
             },
@@ -701,6 +713,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor", "master"],
                 salary: "$75,000 - $130,000",
+                salaryINR: "₹62,25,000 - ₹1,07,90,000",
                 growth: "35% (Much faster than average)",
                 demand: "Very High"
             },
@@ -712,6 +725,7 @@
                 skillLevel: ["advanced", "expert"],
                 education: ["master"],
                 salary: "$95,000 - $140,000",
+                salaryINR: "₹78,85,000 - ₹1,16,20,000",
                 growth: "45% (Much faster than average)",
                 demand: "Very High"
             },
@@ -723,6 +737,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor", "master"],
                 salary: "$80,000 - $150,000",
+                salaryINR: "₹66,40,000 - ₹1,24,50,000",
                 growth: "19% (Much faster than average)",
                 demand: "High"
             },
@@ -734,6 +749,7 @@
                 skillLevel: ["advanced"],
                 education: ["master", "phd"],
                 salary: "$75,000 - $110,000",
+                salaryINR: "₹62,25,000 - ₹91,30,000",
                 growth: "18% (Much faster than average)",
                 demand: "High"
             },
@@ -745,6 +761,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced"],
                 education: ["highschool", "associate", "bachelor"],
                 salary: "$35,000 - $80,000",
+                salaryINR: "₹29,05,000 - ₹66,40,000",
                 growth: "14% (Faster than average)",
                 demand: "High"
             },
@@ -756,6 +773,7 @@
                 skillLevel: ["intermediate", "advanced", "expert"],
                 education: ["bachelor", "master"],
                 salary: "$70,000 - $120,000",
+                salaryINR: "₹58,00,000 - ₹99,60,000",
                 growth: "7% (As fast as average)",
                 demand: "Moderate"
             },
@@ -767,6 +785,7 @@
                 skillLevel: ["intermediate", "advanced"],
                 education: ["bachelor", "master"],
                 salary: "$45,000 - $75,000",
+                salaryINR: "₹37,35,000 - ₹62,25,000",
                 growth: "4% (As fast as average)",
                 demand: "Moderate"
             },
@@ -778,6 +797,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced", "expert"],
                 education: ["highschool", "associate"],
                 salary: "$40,000 - $85,000",
+                salaryINR: "₹33,20,000 - ₹70,55,000",
                 growth: "6% (As fast as average)",
                 demand: "Moderate"
             },
@@ -789,6 +809,7 @@
                 skillLevel: ["advanced", "expert"],
                 education: ["bachelor", "master"],
                 salary: "$65,000 - $120,000",
+                salaryINR: "₹53,95,000 - ₹99,60,000",
                 growth: "3% (As fast as average)",
                 demand: "Moderate"
             },
@@ -800,6 +821,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced"],
                 education: ["associate", "bachelor"],
                 salary: "$45,000 - $80,000",
+                salaryINR: "₹37,35,000 - ₹66,40,000",
                 growth: "13% (Faster than average)",
                 demand: "High"
             },
@@ -811,6 +833,7 @@
                 skillLevel: ["expert"],
                 education: ["phd"],
                 salary: "$80,000 - $140,000",
+                salaryINR: "₹66,40,000 - ₹1,16,20,000",
                 growth: "17% (Much faster than average)",
                 demand: "High"
             },
@@ -822,6 +845,7 @@
                 skillLevel: ["beginner", "intermediate", "advanced"],
                 education: ["highschool", "associate", "bachelor"],
                 salary: "$30,000 - $65,000",
+                salaryINR: "₹24,90,000 - ₹53,95,000",
                 growth: "15% (Much faster than average)",
                 demand: "High"
             }
@@ -868,6 +892,8 @@
         const recommendBtn = document.getElementById('recommend-btn');
         const resetBtn = document.getElementById('reset-btn');
         const backBtn = document.getElementById('back-btn');
+        const downloadPdfBtn = document.getElementById('download-pdf-btn');
+        let currentMatches = [];
         const inputSection = document.getElementById('input-section');
         const loader = document.getElementById('loader');
         const resultsSection = document.getElementById('results-section');
@@ -904,6 +930,7 @@
             recommendBtn.addEventListener('click', generateRecommendations);
             resetBtn.addEventListener('click', resetSelections);
             backBtn.addEventListener('click', showInputSection);
+            downloadPdfBtn.addEventListener('click', generatePDF);
         }
 
         // Toggle interest selection
@@ -948,6 +975,7 @@
             setTimeout(() => {
                 // Calculate matches
                 const matches = calculateMatches();
+                currentMatches = matches;
                 
                 // Display results
                 displayResults(matches);
@@ -1019,7 +1047,7 @@
                     <div class="career-details">
                         <div class="detail-item">
                             <i class="fas fa-money-bill-wave"></i>
-                            <span>Salary: ${career.salary}</span>
+                            <span>Salary: ${career.salary} | ${career.salaryINR}</span>
                         </div>
                         <div class="detail-item">
                             <i class="fas fa-chart-line"></i>
@@ -1068,7 +1096,62 @@
         }
 
         // Initialize the app when the DOM is loaded
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(20);
+            doc.setTextColor(99, 102, 241);
+            doc.text('CareerPath Pro - Career Recommendations', 20, 30);
+            
+            doc.setFontSize(12);
+            doc.setTextColor(100, 116, 139);
+            doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 40);
+            
+            doc.setFontSize(14);
+            doc.setTextColor(30, 41, 59);
+            doc.text('Your Profile:', 20, 60);
+            
+            doc.setFontSize(10);
+            doc.text(`Interests: ${selectedInterests.join(', ')}`, 20, 70);
+            doc.text(`Skill Level: ${selectedSkillLevel}`, 20, 80);
+            doc.text(`Education: ${selectedEducationLevel}`, 20, 90);
+            
+            let yPos = 110;
+            doc.setFontSize(14);
+            doc.setTextColor(30, 41, 59);
+            doc.text('Career Matches:', 20, yPos);
+            
+            currentMatches.forEach((career, index) => {
+                if (yPos > 250) {
+                    doc.addPage();
+                    yPos = 30;
+                }
+                
+                yPos += 20;
+                doc.setFontSize(12);
+                doc.setTextColor(99, 102, 241);
+                doc.text(`${index + 1}. ${career.title} (${career.matchScore}% Match)`, 20, yPos);
+                
+                yPos += 10;
+                doc.setFontSize(9);
+                doc.setTextColor(100, 116, 139);
+                const description = doc.splitTextToSize(career.description, 170);
+                doc.text(description, 20, yPos);
+                yPos += description.length * 5;
+                
+                yPos += 5;
+                doc.text(`Salary: ${career.salary} (${career.salaryINR})`, 20, yPos);
+                yPos += 5;
+                doc.text(`Growth: ${career.growth} | Demand: ${career.demand}`, 20, yPos);
+                yPos += 10;
+            });
+            
+            doc.save('career-recommendations.pdf');
+        }
+
         document.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
 </html>
+
